@@ -26,4 +26,16 @@ print("OpenAI manifest limits ok")
 EOF
 (cd dist/openai && zip -qr ../sss-team-research-skill-openai.zip . -x '*.DS_Store')
 rm -rf dist/openai
+# Directory edition for the Anthropic plugin directory: Markdown/JSON/YAML/PNG only (no scripts).
+# Submit the folder plugins/sss-team-research-skill. Regenerate with this script; tests check it is in sync.
+D=plugins/sss-team-research-skill
+rm -rf "$D" && mkdir -p "$D/.claude-plugin" "$D/skills/sss-team-research-skill"
+cp .claude-plugin/plugin.json .claude-plugin/icon.png "$D/.claude-plugin/"
+cp LICENSE "$D/"
+cp directory/README.md "$D/README.md"
+(cd "$S" && cp SKILL.md "../../$D/skills/sss-team-research-skill/" && cp -R references agents "../../$D/skills/sss-team-research-skill/")
+bad=$(find "$D" -type f ! -name '*.md' ! -name '*.json' ! -name '*.yaml' ! -name '*.png' ! -name LICENSE)
+[ -z "$bad" ] || { echo "Directory edition holds disallowed files: $bad"; exit 1; }
+echo "directory edition: $(find "$D" -type f | wc -l | tr -d ' ') files in $D"
+
 ls -la dist

@@ -79,6 +79,8 @@ Figures are where the SSS standard is most visible, so read `references/sss-figu
 - Taxonomy, concept or other diagrams: draw.io XML by hand, following the standards file.
 - Results charts: a matplotlib script using `assets/paper_style.py` (`faceted_bars`, `trend_dual_axis`, `lollipop`) on the user's real data, saved as PDF and 300-dpi PNG.
 
+**When the scripts are missing.** The directory edition of this skill ships without `scripts/` and `assets/paper_style.py`. If they are not in this skill folder, build the same figure yourself: write the `.drawio` XML directly, following the layout rules in sss-figure-standards.md and the XML rules in diagram-tools.md, and write the matplotlib code inline with the same style (Okabe-Ito colours, sans-serif 8-10 pt, PDF plus 300-dpi PNG). Check the counts by hand: each box equals the box above minus its exclusions, and the final N matches the text. The full edition with the generators is at https://github.com/dayam8696/sss-team-research-skill.
+
 All scripts check the counts. If the numbers do not add up, show the user the error instead of drawing the figure. If draw.io Desktop is installed, render a PNG preview (`draw.io -x -f png -o fig.png fig.drawio`), look at it, and fix any overlaps before you hand it over.
 
 Always deliver a caption with the figure: first sentence says what it shows, second says the takeaway. All tools here are free and need no API key.

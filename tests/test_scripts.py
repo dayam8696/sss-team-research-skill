@@ -188,6 +188,22 @@ def test_chart_helpers_render():
             assert all(os.path.getsize(p) > 1000 for p in save(f, os.path.join(d, f"f{i}")))
 
 
+def test_directory_edition_in_sync_and_allowed_types():
+    """plugins/ copy must match the full skill's Markdown/YAML and hold only directory-allowed file types."""
+    import filecmp
+    repo = os.path.join(os.path.dirname(__file__), "..")
+    lite = os.path.join(repo, "plugins", "sss-team-research-skill")
+    lite_skill = os.path.join(lite, "skills", "sss-team-research-skill")
+    for rel in ["SKILL.md", "agents/openai.yaml"] + ["references/" + f for f in os.listdir(os.path.join(ROOT, "references"))]:
+        assert filecmp.cmp(os.path.join(ROOT, rel), os.path.join(lite_skill, rel), shallow=False), f"stale: {rel} (run bash build.sh)"
+    assert filecmp.cmp(os.path.join(repo, ".claude-plugin", "plugin.json"), os.path.join(lite, ".claude-plugin", "plugin.json"), shallow=False)
+    for dirpath, _, files in os.walk(lite):
+        for f in files:
+            assert f == "LICENSE" or f.rsplit(".", 1)[-1] in {"md", "json", "yaml", "png"}, os.path.join(dirpath, f)
+            with open(os.path.join(dirpath, f), "rb") as fh:
+                assert not fh.read(2) == b"#!", f
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):

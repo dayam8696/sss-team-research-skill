@@ -49,9 +49,9 @@ Rules for writing it:
 - Group a stage with a container: a large rounded rectangle with `dashed=1;fillColor=none;` and the label at the top (`verticalAlign=top;`).
 - Colours: grey `#F5F5F5`/`#666666` for standard parts, and one accent (blue `#DAE8FC`/`#0072B2`, thicker stroke) for the contribution. Use orange `#E69F00` sparingly for a second category.
 - Arrow semantics: solid `endArrow=block` = data flow; `dashed=1` = feedback or optional; `dashed=1;dashPattern=1 3` = human-in-the-loop. Put the meaning in the caption.
-- Check the file is well-formed XML before you deliver it (for example with `python -c "import xml.dom.minidom,sys; xml.dom.minidom.parse(sys.argv[1])" file.drawio`).
+- Check that the file is well-formed XML before you deliver it: every tag is closed, every `&` and `<` inside a `value` is escaped, and every edge `source` and `target` matches an existing cell `id`.
 
-`assets/pipeline-template.drawio` is a ready 5-stage pipeline (Data, Pre-processing, Model, Evaluation, Output). Copy it and rename the labels.
+The XML above is a starting point: extend it to the 5-7 titled column panels described in sss-figure-standards.md §A.
 
 ## 2. PRISMA script
 
@@ -104,4 +104,4 @@ Common recipes:
 - **Heatmap:** `ax.imshow(M, cmap="viridis")` with the value written in each cell, and a colourbar with its label.
 - **Confusion matrix:** `sklearn.metrics.ConfusionMatrixDisplay`, normalised by row, with a note in the caption.
 
-If you cannot run code in this environment, give the script and say exactly how to run it (`python fig3.py`, which needs `pip install matplotlib pandas` or `uv pip install ...`).
+If you cannot run code in this environment, give the script and tell the user to run it with Python 3 after installing matplotlib (see https://matplotlib.org/stable/install/index.html).

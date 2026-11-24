@@ -2,7 +2,7 @@
 
 This file describes how SSS team figures look, based on a visual review of the team's published figures. When anyone asks for a methodology, selection, taxonomy or results figure, match this standard. A plain grey box chart is below the standard.
 
-Each figure type has a generator script that produces an editable draw.io file in the house style. Use the script, then adjust it by hand if needed.
+Each figure type has a generator script that produces an editable draw.io file in the house style. If `scripts/` exists in this skill folder, use the script and then adjust the result by hand. If it does not (the directory edition), write the draw.io XML directly from the same spec and layout rules, and check every count by hand.
 
 | Figure | Paper type | Generator |
 |---|---|---|
