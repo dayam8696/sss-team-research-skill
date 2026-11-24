@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sss-team-research-skill",
+  "version": "1.0.0",
+  "description": "Plan, write, structure and review research papers (empirical studies, systematic and literature reviews, bibliometric analyses, position papers) in the SSS team's house style, and make editable methodology, PRISMA and results figures.",
+  "author": { "name": "SSS Team", "url": "https://github.com/dayam8696" },
+  "homepage": "https://github.com/dayam8696/sss-team-research-skill",
+  "repository": "https://github.com/dayam8696/sss-team-research-skill",
+  "license": "MIT",
+  "keywords": ["research", "academic-writing", "systematic-review", "bibliometric", "prisma", "figures"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SSS Team Research Skill",
+        "shortDescription": "Write & review research papers",
+        "longDescription": "SSS Team Research Skill acts as a senior co-author for researchers and students. It plans, writes and reviews every part of a paper (title, abstract, introduction, related work, methodology, results, discussion, limitations and conclusion) for four paper types: empirical studies, systematic and literature reviews, bibliometric analyses and position papers. It follows a house style distilled from published SSS team papers, plus guardrails that fix common reviewer complaints. It also makes editable figures: methodology pipelines, double-stage search and selection diagrams, PRISMA flows that check that counts add up, and publication-quality matplotlib charts. It never invents numbers or references. Missing facts become visible placeholders for the author to fill in.",
+        "developerName": "SSS Team",
+        "category": "Productivity",
+        "capabilities": ["Academic writing", "Research methodology", "PRISMA and methodology diagrams", "Pre-submission review"],
+        "websiteURL": "https://github.com/dayam8696/sss-team-research-skill",
+        "supportURL": "https://github.com/dayam8696/sss-team-research-skill/issues",
+        "privacyPolicyURL": "https://github.com/dayam8696/sss-team-research-skill/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/dayam8696/sss-team-research-skill/blob/main/TERMS.md",
+        "defaultPrompt": [
+          "Review my draft paper like a journal reviewer and fix the weakest parts.",
+          "Write the methodology for my bibliometric analysis (Scopus, VOSviewer).",
+          "Make a PRISMA diagram from my screening counts."
+        ],
+        "brandColor": "#1F4E9C",
+        "brandColorDark": "#8CB4FF",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "publication": { "release_notes": "Initial release." }
+    }
+  }
+}

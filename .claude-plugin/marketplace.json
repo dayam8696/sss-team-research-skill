@@ -1,6 +1,11 @@
 {
   "name": "sss-team",
-  "owner": { "name": "SSS Team" },
+  "owner": {
+    "name": "SSS Team"
+  },
+  "metadata": {
+    "description": "SSS Team research-writing plugins: paper writing, methodology, review and editable figures."
+  },
   "plugins": [
     {
       "name": "sss-team-research-skill",

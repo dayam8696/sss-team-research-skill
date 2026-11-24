@@ -38,7 +38,7 @@ npx skills add dayam8696/sss-team-research-skill -a claude-code -g
 ```
 
 ### Claude.ai (web / desktop)
-Download `sss-team-research-skill.zip` from the Releases page (or run `bash build.sh`). Then upload it under **Settings → Capabilities → Skills**.
+Once the listing is approved, search for **SSS Team Research Skill** in Claude's plugin directory and enable it. Until then, download `sss-team-research-skill.zip` from the Releases page (or run `bash build.sh`) and upload it under **Settings → Capabilities → Skills**.
 
 ### OpenAI Codex
 ```bash
@@ -46,20 +46,28 @@ npx skills add dayam8696/sss-team-research-skill -a codex -g
 ```
 Codex reads `agents/openai.yaml` for the display name and default prompt.
 
-### ChatGPT (Custom GPT)
-Follow `gpt/gpt-config.md`: paste `gpt/instructions.md` as the instructions, upload `dist/gpt-knowledge/*` as knowledge, and enable Code Interpreter.
+### ChatGPT
+Once the listing is approved, search for **SSS Team Research Skill** in the ChatGPT plugin directory. The package uploaded there is `dist/sss-team-research-skill-openai.zip` (built by `bash build.sh` from `openai/plugin.json`).
 
 ## Repository layout
 ```
 skills/sss-team-research-skill/
   SKILL.md                  entry point (intake menu, workflow, file router)
   references/               writing core, section recipes, 4 paper-type guides, figures, tools, review
-  scripts/prisma_drawio.py  PRISMA 2020 flow -> .drawio, refuses counts that do not add up
+  scripts/                  draw.io generators (pipeline, double-stage, PRISMA selection flow, classic PRISMA)
   assets/                   paper_style.py (matplotlib), pipeline-template.drawio
   agents/openai.yaml        Codex metadata
-gpt/                        Custom GPT instructions and setup
+.claude-plugin/             Claude plugin manifest, marketplace entry, icon
+openai/plugin.json          ChatGPT/Codex Plugin Directory manifest
 tests/                      script tests (python -m pytest tests)
 ```
+
+## What this plugin runs
+The plugin contains no MCP servers, hooks or network code. It is Markdown instructions plus five small, standard-library-only Python scripts, which the assistant may run when you ask for a figure:
+- `prisma_drawio.py`, `selection_flow_drawio.py`, `double_stage_drawio.py`, `pipeline_drawio.py` (with `drawio_lib.py`): read your counts or a JSON spec, check the arithmetic, and write a `.drawio` file.
+- `assets/paper_style.py`: sets matplotlib styling and saves your chart as PDF/PNG (needs matplotlib).
+
+None of them sends data anywhere or changes any settings. See `PRIVACY.md`.
 
 ## Where the style comes from
 The patterns were distilled from 28 papers by SSS team members (see `references/exemplars.md`). The skill contains paraphrased patterns and templates only, with no text or figures from those papers. Each paper-type guide also contains **guardrails** that fix the most common reviewer complaints we found.
@@ -68,4 +76,4 @@ The patterns were distilled from 28 papers by SSS team members (see `references/
 Use the skill to write *your own* research. Check your venue's policy on AI-assisted writing and disclose it where required. Verify every reference before you submit.
 
 ## License
-MIT. See `LICENSE`. Third-party credits are in `NOTICE.md`.
+MIT. See `LICENSE`, `TERMS.md` and `PRIVACY.md`. Third-party credits are in `NOTICE.md`.
