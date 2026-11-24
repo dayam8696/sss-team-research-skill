@@ -55,14 +55,7 @@ The XML above is a starting point: extend it to the 5-7 titled column panels des
 
 ## 2. PRISMA script
 
-```bash
-python scripts/prisma_drawio.py --out prisma.drawio \
-  --identified "Scopus=1048" --identified "Web of Science=512" \
-  --duplicates 300 --other-removed 12 --screened 1248 --excluded-screening 980 \
-  --sought 268 --not-retrieved 6 --assessed 262 \
-  --excluded-reason "Off-topic=120" --excluded-reason "No empirical evaluation=40" \
-  --other-sources 6 --included 108
-```
+When `scripts/` is present, `scripts/prisma_drawio.py` takes the PRISMA 2020 counts as named options (identified per source, duplicates, screened, excluded at screening, sought, not retrieved, assessed, excluded reasons, other sources, included). The usage example is in the script's own docstring.
 
 The script checks that each box equals the one above minus its exclusions, and it refuses to write a diagram that does not add up. This catches the most common reviewer complaint about PRISMA figures. If the user's counts do not add up, show them the error, not a diagram.
 
