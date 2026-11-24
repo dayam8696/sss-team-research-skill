@@ -30,11 +30,11 @@ The skill never invents numbers or references. Anything it does not know becomes
 ### Claude Code
 ```bash
 # Option 1: plugin marketplace
-claude plugin marketplace add dayam8696/sss-team-research-skill-
+claude plugin marketplace add dayam8696/sss-team-research-skill
 claude plugin install sss-team-research-skill@sss-team
 
 # Option 2: skills CLI
-npx skills add dayam8696/sss-team-research-skill- -a claude-code -g
+npx skills add dayam8696/sss-team-research-skill -a claude-code -g
 ```
 
 ### Claude.ai (web / desktop)
@@ -42,7 +42,7 @@ Download `sss-team-research-skill.zip` from the Releases page (or run `bash buil
 
 ### OpenAI Codex
 ```bash
-npx skills add dayam8696/sss-team-research-skill- -a codex -g
+npx skills add dayam8696/sss-team-research-skill -a codex -g
 ```
 Codex reads `agents/openai.yaml` for the display name and default prompt.
 
