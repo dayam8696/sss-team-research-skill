@@ -1,0 +1,11 @@
+{
+  "name": "sss-team",
+  "owner": { "name": "SSS Team" },
+  "plugins": [
+    {
+      "name": "sss-team-research-skill",
+      "source": "./",
+      "description": "Research paper writing, methodology, review and figure skill (SSS house style)."
+    }
+  ]
+}

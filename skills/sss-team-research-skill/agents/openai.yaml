@@ -1,0 +1,4 @@
+interface:
+  display_name: "SSS Team Research Skill"
+  short_description: "Write, structure and review research papers, and make editable figures and diagrams"
+  default_prompt: "Use $sss-team-research-skill to help me with my research paper."

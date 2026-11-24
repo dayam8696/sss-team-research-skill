@@ -1,0 +1,8 @@
+{
+  "name": "sss-team-research-skill",
+  "version": "1.0.0",
+  "description": "Plan, write, structure and review research papers (empirical, systematic review, bibliometric, position) and make editable figures and diagrams.",
+  "author": { "name": "SSS Team" },
+  "license": "MIT",
+  "keywords": ["research", "academic-writing", "paper", "systematic-review", "bibliometric", "prisma", "drawio", "figures"]
+}
