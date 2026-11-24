@@ -3,11 +3,23 @@
   "displayName": "SSS Team Research Skill",
   "version": "1.0.0",
   "description": "Plan, write, structure and review research papers (empirical, systematic review, bibliometric, position) and make editable methodology, PRISMA and results figures.",
-  "author": { "name": "SSS Team", "url": "https://github.com/dayam8696" },
+  "author": {
+    "name": "dayam8696",
+    "url": "https://github.com/dayam8696"
+  },
   "homepage": "https://github.com/dayam8696/sss-team-research-skill",
   "repository": "https://github.com/dayam8696/sss-team-research-skill",
   "license": "MIT",
-  "keywords": ["research", "academic-writing", "paper", "systematic-review", "bibliometric", "prisma", "drawio", "figures"],
+  "keywords": [
+    "research",
+    "academic-writing",
+    "paper",
+    "systematic-review",
+    "bibliometric",
+    "prisma",
+    "drawio",
+    "figures"
+  ],
   "icon": "./.claude-plugin/icon.png",
   "documentationUrl": "https://github.com/dayam8696/sss-team-research-skill#readme",
   "supportUrl": "https://github.com/dayam8696/sss-team-research-skill/issues",

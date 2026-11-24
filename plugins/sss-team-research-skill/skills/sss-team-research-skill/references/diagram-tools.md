@@ -14,7 +14,7 @@ Pick the tool by the figure type and the user's workflow:
 | Data charts | matplotlib + `assets/paper_style.py` | seaborn on top of the same style |
 | Networks (bibliometric) | Export from VOSviewer / Biblioshiny at high resolution | networkx + matplotlib for custom ones |
 
-Deliver the source file. Users can edit `.drawio` files at https://app.diagrams.net (free, runs in the browser) and export them to PDF, PNG or SVG.
+Deliver the source file. Users can open and edit `.drawio` files in the free draw.io editor (diagrams.net) and export them to PDF, PNG or SVG.
 
 ## 1. draw.io XML
 
@@ -104,4 +104,4 @@ Common recipes:
 - **Heatmap:** `ax.imshow(M, cmap="viridis")` with the value written in each cell, and a colourbar with its label.
 - **Confusion matrix:** `sklearn.metrics.ConfusionMatrixDisplay`, normalised by row, with a note in the caption.
 
-If you cannot run code in this environment, give the script and tell the user to run it with Python 3 after installing matplotlib (see https://matplotlib.org/stable/install/index.html).
+If you cannot run code in this environment, give the user the complete script and say that it needs Python 3 with the matplotlib library.
